@@ -92,3 +92,38 @@ class Solution {
 
     }
 }
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        
+        
+        int arr[] = { 1000, 11, 445, 1, 330, 3000, 0, 5555, 7777777, -1, -2, -77777 };
+        int i=0;
+        int j=1;
+        int max = Integer.MIN_VALUE; 
+        int min= Integer.MAX_VALUE; 
+        while (j<arr.length) {
+            if (arr[i] < arr[j]) {
+                min = Math.min(min, arr[i]);
+                max = Math.max(max, arr[j]);
+            } else if (arr[i] > arr[j]){
+                min = Math.min(min, arr[j]);
+                max = Math.max(max, arr[i]);
+            }
+            i = i+2;
+            j=j+2;
+        }
+        if (j == arr.length) {
+            min = Math.min(min, arr[i]);
+            max = Math.max(max, arr[i]);
+        }
+        System.out.println(min);
+        System.out.println(max);
+    }
+}
